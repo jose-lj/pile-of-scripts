@@ -4,9 +4,23 @@ BASEADDR=0x10062000
 BASEADDR2=0x100620f8
 BASEADDR3=0x100620fc
 
+ACCEPT_COUNT0=0x1006101C
+ACCEPT_COUNT1=0x10061020
+DROP_COUNT0=0x10061014
+DROP_COUNT1=0x10061018
+
 divider============================
 divider=$divider$divider
 width=40
+
+STRING="$(devmem $ACCEPT_COUNT0)"
+printf "Port 0 accepted:\t%8s\n" ${STRING:2}
+STRING="$(devmem $ACCEPT_COUNT1)"
+printf "Port 1 accepted:\t%8s\n" ${STRING:2}
+STRING="$(devmem $DROP_COUNT0)"
+printf "Port 0 dropped:\t%8s\n" ${STRING:2}
+STRING="$(devmem $DROP_COUNT1)"
+printf "Port 1 dropped:\t%8s\n" ${STRING:2}
 
 HEADER="\n %6s    %12s   %9s\n"
 FORMAT="    %02d     %2s:%2s:%2s:%2s:%2s:%2s      %4s\n"
