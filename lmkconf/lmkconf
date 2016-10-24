@@ -18,7 +18,6 @@ with open(infile,"r") as inf, open(outfile,"w") as outf:
 	outf.write("const struct {int reg; uint32_t val;} "+args.sname+"[] = {\n")
 	outf.write("{1, 0x800201C1},  //POWERDOWN\n")
 	outf.write("{1, 0x800001C1},  //POWERUP\n")
-	outf.write("{0, 0x80020140},  //RESET\n")
 	for line in inf:
 		tmp=line.split("\t")
 		reg=tmp[0].partition(' ')[0][1:]
