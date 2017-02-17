@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser(description='Converts a raw register file from 
 
 parser.add_argument("inputfile", help="Input file from CodeLoader")
 parser.add_argument("outputfile", help="Output file")
-parser.add_argument("-s","--struct", dest="sname", default="tilmk03086_regs_WR", help="Name of the const struct")
+parser.add_argument("-s","--struct", dest="sname", default="tilmk03806_regs_WR", help="Name of the const struct")
 
 args = parser.parse_args()
 
